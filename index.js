@@ -52,7 +52,8 @@ app.use((err, req, res, next) => {
 // http.listen(Env.PORT, () => {
 //   console.log(`Server is running on port ${Env.PORT}`)
 // })
-http.listen(Env.PORT, (err) => {
-   console.log(`Server is running on port ${Env.PORT}`);
+const port = 3001;
+http.listen(port, (err) => {
+   console.log('server started on port: '+port);
    console.log(err);
 });
