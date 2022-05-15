@@ -16,7 +16,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: copy snapshot
-      run: ls
+      run: ls && rm -r /home/ubuntu/be && mkdir /home/ubuntu/be && cp ./* /home/ubuntu/be
+    
+    - name: try to run install
+      run: ls && cd /home/ubuntu/be && npm install
     - name: stop sevice
       run: sudo systemctl stop be.service
     - name: start sevice
