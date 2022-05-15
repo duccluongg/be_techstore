@@ -53,6 +53,6 @@ app.use((err, req, res, next) => {
 //   console.log(`Server is running on port ${Env.PORT}`)
 // })
 http.listen(Env.PORT, (err) => {
-   console.log('server started on port: '+port);
+   console.log(`Server is running on port ${Env.PORT}`);
    console.log(err);
 });
