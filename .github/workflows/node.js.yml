@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: copy snapshot
-      run: ls && sudo rm /home/ubuntu/be/* && cp -r ./* /home/ubuntu/be
+      run: ls && sudo rm -r /home/ubuntu/be/* && cp -r ./* /home/ubuntu/be
     
     - name: try to run install
       run: ls && cd /home/ubuntu/be && npm install
