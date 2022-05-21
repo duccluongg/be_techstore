@@ -1,4 +1,4 @@
 module.exports = {
   // secret:'nodeauthsecret',
-  dbStr: 'mongodb://localhost:27017/technology_store'
+  dbStr: 'mongodb://localhost:27017/techshop'
 }
