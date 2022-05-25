@@ -43,6 +43,14 @@ class AdminController {
     return res.status(200).json(response)
   }
 
+  async orderDetail(req, res, next) {
+    const { id } = req.params
+
+    const response = await adminService.orderDetail({ _id: id })
+
+    return res.status(200).json(response)
+  }
+
   // PRODUCT
   async createProduct(req, res, next) {
     const { name, thumbnail, price, sale_price, specifications, short_description, brand_id, category_id, name_latin, description } = req.body

@@ -171,6 +171,39 @@ class OrderRepository {
       items: orderItems,
     };
   }
+
+  async getDetail({ _id }) {
+    const order = await Models.Order.findOne({
+      _id,
+    }).populate({
+      path: 'payment_id',
+    });
+
+    if (!order) {
+      return 'Error! Order not found.';
+    }
+
+    const orderItems = await OrderItemRepository.getByOrderID({
+      order_id: order._id,
+    });
+
+    return {
+      id: order._id,
+      user: order.user_id,
+      is_paid: order.is_paid,
+      name: order.name,
+      address: order.address,
+      phone_number: order.phone_number,
+      payment: order.payment_id,
+      shipping_fee: order.shipping_fee,
+      sum_price: order.sum_price,
+      total_cost: order.total_cost,
+      status: order.status,
+      created_at: order.created_at,
+      payment: order.payment_id,
+      items: orderItems,
+    };
+  }
 }
 
 module.exports = new OrderRepository();
