@@ -87,6 +87,12 @@ class AdminService {
     return order ? order : []
   }
 
+  async orderDetail({ _id }) {
+    const order = await orderRepo.getDetail({ _id })
+
+    return order ? order : []
+  }
+
   // PRODUCT
   async createProduct({ name, thumbnail, price, sale_price, specifications, short_description, brand_id, category_id, name_latin, description }) {
     const product = await productRepo.create({ name, thumbnail, price, sale_price, specifications, short_description, brand_id, category_id, name_latin, description })

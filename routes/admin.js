@@ -17,6 +17,7 @@ router.post('/ratings/:rating_id/response', adminCtrl.responseOfARating)
 // orders
 router.get('/orders', adminCtrl.getOrderList)
 router.put('/orders/:id', adminCtrl.updateOrderStatus)
+router.get('/orders/:id', adminCtrl.orderDetail)
 
 // products
 router.post('/products', adminCtrl.createProduct)
