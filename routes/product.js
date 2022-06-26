@@ -10,6 +10,5 @@ router.get('/bought_by_same_users', productCtrl.getAll)
 
 router.get('/lite', productCtrl.getAll)
 router.get('/:id', productCtrl.getDetail)
-router.get('/:id/ratings', productCtrl.getAllRating)
 
 module.exports = router

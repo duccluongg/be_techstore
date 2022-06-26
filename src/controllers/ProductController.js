@@ -15,13 +15,6 @@ class ProductController {
 
     return res.status(200).json(response)
   }
-
-  async getAllRating(req, res, next) {
-    const { id } = req.params
-    const response = await ratingService.getAllRatingByProductId({ product_id: id })
-
-    return res.status(200).json(response)
-  }
   
   async getProductSuggestion(req, res, next) {
     return 'Updating...'

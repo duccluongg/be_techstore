@@ -66,9 +66,9 @@ class RatingRepository {
 
     rating.save()
   }
-
-  async getAllRatingByProductId({ product_id }) {
-    const ratings = await Models.Rating.find({ product_id: { $in: product_id } })
+  
+  async getAll() {
+    const ratings = await Models.Rating.find()
 
     return ratings
   }
