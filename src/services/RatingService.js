@@ -6,6 +6,12 @@ class RatingService {
 
     return ratings ? ratings : []
   }
+
+  async getAllRatingByProductId({ product_id }) {
+    const ratings = await ratingRepo.getAllRatingByProductId({ product_id })
+
+    return ratings ? ratings : []
+  }
 }
 
 module.exports = new RatingService()
